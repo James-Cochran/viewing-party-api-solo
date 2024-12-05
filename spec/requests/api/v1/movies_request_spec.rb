@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Top Rated Movies', type: :request do
+RSpec.describe 'Movies Endpoints', type: :request do
   describe "happy path" do
     it "can retrieve a list of 20 top rated movies" do
       json_response = File.read('spec/fixtures/top_rated_movies.json')
@@ -19,6 +19,28 @@ RSpec.describe 'Top Rated Movies', type: :request do
       expect(movie[:id]).to be_a(String)
       expect(movie[:attributes]).to have_key(:title)
       expect(movie[:attributes]).to have_key(:vote_average)
+    end
+
+    describe "Movie Search" do
+      it "can retrieve a list of movies based on a search query" do
+        json_response = File.read('spec/fixtures/top_rated_movies.json')
+        stub_request(:get, "https://api.themoviedb.org/3/search/movie")
+          .with(query: { api_key: Rails.application.credentials.themoviedb[:key], query: "Lord of the Rings" })
+          .to_return(status: 200, body: json_response)
+  
+        get "/api/v1/movies?query=Lord+of+the+Rings"
+  
+        expect(response).to be_successful
+        json = JSON.parse(response.body, symbolize_names: true)[:data]
+  
+        expect(json.count).to be <= 20 
+        movie = json.first
+        expect(movie[:type]).to eq("movie")
+        expect(movie[:id]).to be_a(String)
+        expect(movie[:attributes]).to have_key(:title)
+        expect(movie[:attributes][:title]).to eq("The Lord of the Rings: The Return of the King")
+        expect(movie[:attributes]).to have_key(:vote_average)
+      end
     end
   end
 end
