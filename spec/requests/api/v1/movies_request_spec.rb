@@ -4,7 +4,8 @@ RSpec.describe 'Top Rated Movies', type: :request do
   describe "happy path" do
     it "can retrieve a list of 20 top rated movies" do
       json_response = File.read('spec/fixtures/top_rated_movies.json')
-      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=dc229d04fae6c82dd1fb9af1103f94fe").to_return(status: 200, body: json_response)
+      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{Rails.application.credentials.themoviedb[:key]}")
+        .to_return(status: 200, body: json_response)
 
       get "/api/v1/movies"  
 
