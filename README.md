@@ -15,3 +15,12 @@ Viewing Party is an application that allows users to explore movies and create a
 Spend some time familiarizing yourself with the functionality and structure of the application so far.
 
 Run the application and test out some endpoints: `rails s`
+
+## Base URL
+  Local: `http://localhost:3000`
+  Deployed: `https://glacial-falls-86396-b2e9f88a1963.herokuapp.com`
+
+## Endpoints
+  Endpoint: `/api/v1/movies`
+  Method: `GET`
+  Description: Retrieves the top 20 rated movies from The Movie DB API
