@@ -16,7 +16,7 @@ RSpec.describe 'Movies Endpoints', type: :request do
 
       movie = json.first
       expect(movie[:type]).to eq("movie")
-      expect(movie[:id]).to be_a(String)
+      expect(movie[:id]).to be_a(Integer)
       expect(movie[:attributes]).to have_key(:title)
       expect(movie[:attributes]).to have_key(:vote_average)
     end
@@ -38,7 +38,7 @@ RSpec.describe 'Movies Endpoints', type: :request do
         first_movie = json.first
         expect(first_movie[:attributes][:title]).to eq("The Lord of the Rings: The Fellowship of the Ring")
         expect(first_movie[:type]).to eq("movie")
-        expect(first_movie[:id]).to be_a(String)
+        expect(first_movie[:id]).to be_a(Integer)
         expect(first_movie[:attributes]).to have_key(:title)
         expect(first_movie[:attributes]).to have_key(:vote_average)
       end
