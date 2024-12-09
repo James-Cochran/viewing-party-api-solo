@@ -1,0 +1,43 @@
+{
+  "page": 1,
+  "results": [
+      {
+          "adult": false,
+          "backdrop_path": "/klH8ti8LUaEhktnjdHb1RW8Yq6w.jpg",
+          "genre_ids": [
+              35
+          ],
+          "id": 5825,
+          "original_language": "en",
+          "original_title": "National Lampoon's Christmas Vacation",
+          "overview": "It's Christmastime, and the Griswolds are preparing for a family seasonal celebration. But things never run smoothly for Clark, his wife Ellen, and their two kids. Clark's continual bad luck is worsened by his obnoxious family guests, but he manages to keep going, knowing that his Christmas bonus is due soon.",
+          "popularity": 146.427,
+          "poster_path": "/bIPDxGAuoIFeLTOsAsKkawxWIvq.jpg",
+          "release_date": "1989-11-30",
+          "title": "National Lampoon's Christmas Vacation",
+          "video": false,
+          "vote_average": 7.235,
+          "vote_count": 2351
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/6ZA6O0q48rEpvqnm5SA5a5Cu4IC.jpg",
+          "genre_ids": [
+              35
+          ],
+          "id": 11155,
+          "original_language": "en",
+          "original_title": "Christmas Vacation 2: Cousin Eddie's Island Adventure",
+          "overview": "Though Eddie's fired right at Christmastime, his boss sends him and his family on a South Pacific vacation, hoping Eddie won't sue him after being bitten by a lab monkey. When the Tuttle family winds up trapped on a tropical island, however, Eddie manages to provide for everyone and prove himself a real man.",
+          "popularity": 15.846,
+          "poster_path": "/wTtEMlMul5Xpg4L2lOrj6Kp0R4I.jpg",
+          "release_date": "2003-12-20",
+          "title": "Christmas Vacation 2: Cousin Eddie's Island Adventure",
+          "video": false,
+          "vote_average": 4.0,
+          "vote_count": 90
+      }
+  ],
+  "total_pages": 1,
+  "total_results": 2
+}
