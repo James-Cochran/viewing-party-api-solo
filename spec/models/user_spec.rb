@@ -9,4 +9,9 @@ RSpec.describe User, type: :model do
     it { should have_secure_password }
     it { should have_secure_token(:api_key) }
   end
+
+  describe "relationships" do
+    it { should have_many(:user_viewing_parties) }
+    it { should have_many(:viewing_parties).through(:user_viewing_parties) }
+  end
 end
